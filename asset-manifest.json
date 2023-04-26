@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Shop-Till-You-Drop/static/css/main.073c9b0a.css",
+    "main.js": "/Shop-Till-You-Drop/static/js/main.7720f5ad.js",
+    "index.html": "/Shop-Till-You-Drop/index.html",
+    "main.073c9b0a.css.map": "/Shop-Till-You-Drop/static/css/main.073c9b0a.css.map",
+    "main.7720f5ad.js.map": "/Shop-Till-You-Drop/static/js/main.7720f5ad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.7720f5ad.js"
+  ]
+}
