@@ -1,53 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Shop() {
+function Shop({items, handlerID}) {
 
     const shopItemStyle = {
         color: "var(--third)"
     };
 
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-        fetchItems();
-    }, []);
-
-    function getRandom(arr, n) {
-        var result = new Array(n),
-            len = arr.length,
-            taken = new Array(len);
-        if (n > len)
-            throw new RangeError("getRandom: more elements taken than available");
-        while (n--) {
-            var x = Math.floor(Math.random() * len);
-            result[n] = arr[x in taken ? taken[x] : x];
-            taken[x] = --len in taken ? taken[len] : len;
-        }
-        return result;
-    }
-
-    const fetchItems = async () => {
-        const data = await fetch("https://botw-compendium.herokuapp.com/api/v2/category/equipment");
-        const items = await data.json();
-        const lessItems = getRandom(items.data, 10);
-        for (let i = 0; i < lessItems.length; i++) {
-            let sepArr = lessItems[i].name.split(" ");
-            for (let k = 0; k < sepArr.length; k++) {
-                sepArr[k] = sepArr[k][0].toUpperCase() + sepArr[k].slice(1);
-            }
-            lessItems[i].name = sepArr.join(" ");
-        }
-        console.log(lessItems);
-        setItems(lessItems);
+    function toRouteSwitch(id) {
+        handlerID(id);
     }
 
     return (
         <div className="shopList" >
             {items.map(item => (
                 <h1 key={item.id}>
-                    <Link to={`/shop/${item.id}`} style={shopItemStyle} >
-                        {item.name}
+                    <Link to={`/shop/${item.id}`} style={shopItemStyle} onClick={() => {toRouteSwitch(item.id)}} >
+                        <div className="itemBox">
+                            <div className="itemName">
+                                {item.name}
+                            </div>
+                            <div className="itemName">
+                                <img src={item.image} alt="each specific item" className="itemBoxImage" />
+                            </div>
+                            <div className="itemPrice">
+                                ${item.price}
+                            </div>
+                        </div>
                     </Link>
                 </h1>
             ))}
