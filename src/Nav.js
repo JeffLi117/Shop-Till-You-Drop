@@ -6,7 +6,7 @@ function Nav() {
     <nav>
         <h3>Movie Poster Madness</h3>
         <ul className="nav-links">
-            <Link to="/" >
+            <Link to="/home" >
                 <li>Home</li>
             </Link>
             <Link to="/shop" >

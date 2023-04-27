@@ -11,6 +11,7 @@ import {
 import App from "./App";
 import Contact from "./Contact";
 import Nav from "./Nav";
+import Home from "./Home";
 import poster1 from './posters/poster1.jpg';
 import poster2 from './posters/poster2.jpg';
 import poster3 from './posters/poster3.jpg';
@@ -135,10 +136,10 @@ const Shop = () => {
                 <Link to={`/shop/${item.id}`} style={shopItemStyle} onClick={handleProceed} >
                     <div className="itemBox">
                         <div className="itemName">
-                            {item.name}
+                            <img src={item.image} alt="each specific item" className="itemBoxImage" />
                         </div>
                         <div className="itemName">
-                            <img src={item.image} alt="each specific item" className="itemBoxImage" />
+                            {item.name}
                         </div>
                         <div className="itemPrice">
                             ${item.price}
@@ -155,10 +156,11 @@ const Shop = () => {
 const RouteSwitch = () => {
 
     return (
-      <BrowserRouter>
+      <BrowserRouter basename="/Shop-Till-You-Drop">
         <Nav />
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/shop/:ID" element={<Products />} />
