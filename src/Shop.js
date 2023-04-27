@@ -15,7 +15,7 @@ function Shop({items, handlerID}) {
         <div className="shopList" >
             {items.map(item => (
                 <h1 key={item.id}>
-                    <Link to={`/shop/${item.id}`} style={shopItemStyle} onClick={() => {toRouteSwitch(item.id)}} >
+                    <Link to={`/shop/${item.id}`} style={shopItemStyle} /* onClick={() => {toRouteSwitch(item.id)}} */ >
                         <div className="itemBox">
                             <div className="itemName">
                                 {item.name}

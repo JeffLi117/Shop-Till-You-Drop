@@ -156,7 +156,7 @@ a:link, a:visited {
 }
 
 a:hover {
-  color: var(--third);
+  color: var(--fourth);
   text-decoration: none;
 }
 
