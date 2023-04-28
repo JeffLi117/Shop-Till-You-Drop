@@ -111,6 +111,43 @@ nav {
   list-style: none;
 }
 
+.welcomeTextHolder {
+  margin: 1em;
+  margin-bottom: 0.5em;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  padding: 1rem;
+  background-color: var(--second);
+  height: 85vh;
+  width: 100%;
+}
+
+.welcomeTextHolder > h1 {
+  font-size: 2.15em;
+  font-family: 'Cinzel', serif;
+  font-weight: bolder;
+  margin: 1rem;
+  margin-bottom: 2rem;
+}
+
+.welcomeTextHolder > div {
+  font-size: 1.65em;
+  margin-bottom: 2rem;
+  font-weight: lighter;
+}
+
+.welcomeTextHolder > div:nth-child(n + 3) {
+  font-size: 1.35em;
+  margin-bottom: 2rem;
+  font-weight: 100;
+}
+
 .shopList {
   margin: 1em;
   margin-bottom: 0.5em;
@@ -119,8 +156,11 @@ nav {
   display: flex;
   flex-direction: column;
   gap: 0.4em;
-  justify-content: center;
   align-items: flex-start;
+  border: 1px solid black;
+  background-color: var(--second);
+  height: 85vh;
+  overflow-y:scroll;
 }
 
 .itemBox {
@@ -279,9 +319,19 @@ img.itemBoxImage {
 
 .cartBackground {
   height: 91vh;
-  padding: 1.4rem;
+  padding: 1.25rem;
   background-image: url('./goldflower.jpg');
-  background-repeat: no-repeat;
+  background-repeat:repeat-y;
+}
+
+.cartBackgroundShop {
+  height: 91vh;
+  padding: 1.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('./goldflower.jpg');
+  background-repeat:repeat-y;
 }
 
 .filledCartText, .emptyCartText {
@@ -339,7 +389,27 @@ img.cartImage {
   background-color: var(--second);
 }
 
+button.checkout {
+  margin: 1rem;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  color: var(--fourth);
+  font-size: 1.3em;
+  border: 2px solid var(--fourth);
+  background-color: var(--third);
+  border-radius: 0;
+  cursor: pointer;
+  transition: background-color 0.75s;
+  transition: color 0.75s;
+}
+
+button.checkout:hover {
+  background-color: var(--fourth);
+  color: var(--second);
+}
+
 .empty {
+  text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -387,20 +457,30 @@ img.cartImage {
   align-items: center;
 }
 
+.cartNotImgInfo > .cartEachButtons button {
+  max-height: 27px;
+  padding: 0;
+  border: 2px solid var(--fourth);
+}
+
+.cartNotImgInfo > .cartEachButtons input {
+  border: 0;
+}
+
 .cartEachButtons {
   height: 100%;
 }
 
 .numberInput > button, .numberInput > input {
   max-height: 28px;
+  padding: 0;
+  border: 0;
 }
 /* figure out how to make sure these +/- buttons 
 stay a CONSISTENT size, and look relatively square*/
 .cartTotal {
   font-size: 1.5em;
 }
-
-
 input[type="number"] {
   height: 100%;
 }
@@ -409,15 +489,12 @@ input[type="number"] {
   -webkit-appearance: textfield;
   -moz-appearance: textfield;
   appearance: textfield;
-  border: 2px solid var(--fourth);
   display:inline-block;
   text-align:center;
   background-color: var(--second);
   box-sizing: border-box;
   font-weight: 800;
   font-family: 'Bebas Neue', cursive;
-  border-left: 0;
-  border-right: 0;
 }
 
 input[type='number']::-webkit-inner-spin-button, 
@@ -440,6 +517,7 @@ input[type='number']::-webkit-outer-spin-button {
   outline:none;
   -webkit-appearance: none;
   background-color: #eeeeee;
+  padding: 0;
   border: 2px solid var(--fourth);
   background-color: var(--third);
   align-items: center;
@@ -448,7 +526,6 @@ input[type='number']::-webkit-outer-spin-button {
   cursor: pointer;
   margin: 0;
   position: relative;
-  padding:0;
 }
 
 @keyframes shimmyL {
@@ -495,6 +572,44 @@ a:hover {
 a:active {
   color: hotpink;
   text-decoration: none;
+}
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 2vh;
+  border: 1px solid black;
+  background-color: var(--second);
+  padding: 1rem;
+  text-align: center;
+}
+
+.contactInfo  div:first-child {
+  margin-top: 2rem;
+  font-size: 2em;
+}
+
+.contactInfo > a {
+  background-color: var(--third);
+  padding: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contactInfo  div:last-child {
+  font-size: 1.5em;
+  margin-bottom: 1.5rem;
+}
+
+.contactInfo > a:hover img {
+  animation: spin 1s 1;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* width */

@@ -171,31 +171,33 @@ const Shop = (/* {cart, setCart} */) => {
     } */
   
     return (
-      <div className="shopList">
-          {items.map((item) => (
-            <h1 key={item.id}>
-                <Link 
-                    to={`/shop/${item.id}`} 
-                    style={shopItemStyle} 
-                    onClick={handleProceed} 
-                    /* cart={cart} 
-                    handlerSetCart={handlerSetCart} */
-                >
-                    <div className="itemBox">
-                        <div className="itemName">
-                            <img src={item.image} alt="each specific item" className="itemBoxImage" />
-                        </div>
-                        <div className="itemName">
-                            {item.name}
-                        </div>
-                        <div className="itemPrice">
-                            ${item.price}
-                        </div>
-                    </div>
-                </Link>
-            </h1>
-          ))}
-      </div>
+        <div className="cartBackgroundShop" >
+            <div className="shopList">
+                {items.map((item) => (
+                    <h1 key={item.id}>
+                        <Link 
+                            to={`/shop/${item.id}`} 
+                            style={shopItemStyle} 
+                            onClick={handleProceed} 
+                            /* cart={cart} 
+                            handlerSetCart={handlerSetCart} */
+                        >
+                            <div className="itemBox">
+                                <div className="itemName">
+                                    <img src={item.image} alt="each specific item" className="itemBoxImage" />
+                                </div>
+                                <div className="itemName">
+                                    {item.name}
+                                </div>
+                                <div className="itemPrice">
+                                    ${item.price}
+                                </div>
+                            </div>
+                        </Link>
+                    </h1>
+                ))}
+            </div>
+        </div>
     );
 }; 
 
@@ -217,10 +219,7 @@ const RouteSwitch = () => {
                 ...prevState,
                 [specificID]: array[1]
             }));
-            /* cart[specificID] = array[1]; */
         }
-        /* console.log(`itemID is ${array[0]}, new item count is ${array[1]}`); */
-        /* setCart(); */
     }
 
     /* useEffect(() => {

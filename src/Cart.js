@@ -53,7 +53,7 @@ function Cart({cart, items, handlerCart, handlerToInputNum}) {
                         Your shopping cart
                     </div>
                     <div className="filledCart">
-                        {cartArr.map((el) => (
+                        {cartArr.filter(el => el[1] !== 0).map((el) => (
                             <div key={el} >
                                 <div className="cartPic">
                                     <img src={items[(el[0]-1)].image} alt="each specific item" className="cartImage" />
@@ -82,6 +82,9 @@ function Cart({cart, items, handlerCart, handlerToInputNum}) {
                     <div className="cartTotal">
                         Total: ${total}
                     </div>
+                    <button className="checkout">
+                        Checkout
+                    </button>
                 </div>
             </div>
         )
