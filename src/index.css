@@ -79,8 +79,9 @@ h3 {
 
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
+  text-align: center;
   height: 9vh;
   background-color: var(--third);
   color: black;
@@ -99,10 +100,13 @@ nav {
 }
 
 .nav-links {
-  width: 50%;
-  display: flex;
+  width: 65%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 5px;
   justify-content: space-around;
-  font-size: 1.2em;
+  font-size: 1.1em;
   align-items: center;
   list-style: none;
 }
@@ -254,11 +258,88 @@ img.itemBoxImage {
   background-color: var(--third);
   padding: 5px;
   width: 100%;
+  cursor: pointer;
 }
 
 .counterBtn {
   height: 100%;
 }
+
+.filledCartText, .emptyCartText {
+  font-size: 2.5em;
+}
+
+img.cartImage {
+  width: 50%;
+  border: 2px solid black;
+}
+
+.filledCart, .cartTotal {
+  margin-top: 1rem;
+}
+
+.filledCart {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.filledCart > div {
+  display: grid;
+  grid-template-columns: 65% 35%;
+}
+
+.filledCart > hr {
+  margin-top: 1.3rem;
+  border: 1px solid black;
+  width: 95%;
+  opacity: 0.75;
+}
+
+.cartPic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartName {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 60%;
+}
+
+.cartTextHolder {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartNotImgInfo {
+  padding-top: 7.5px;
+  font-size: 1.25em;
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: 50vw;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.cartEachButtons {
+  height: 100%;
+}
+
+.numberInput > button, .numberInput > input {
+  max-height: 28px;
+}
+/* figure out how to make sure these +/- buttons 
+stay a CONSISTENT size, and look relatively square*/
+.cartTotal {
+  font-size: 1.5em;
+}
+
 
 input[type="number"] {
   height: 100%;
@@ -392,6 +473,24 @@ a:active {
 */
 
 @media screen and (min-width: 450px) {
+  body {
+    font-size: 15px;
+  }
+  h3 {
+    font-size: 1.65em;
+  }
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .nav-links {
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3em;
+    align-items: center;
+  }
   .shopList {
     display: grid;
     grid-template-columns: repeat(2, 47%);

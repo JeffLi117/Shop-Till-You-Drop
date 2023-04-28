@@ -13,6 +13,7 @@ import Contact from "./Contact";
 import Nav from "./Nav";
 import Home from "./Home";
 import AddToBag from './AddToBag';
+import Cart from "./Cart";
 import poster1 from './posters/poster1.jpg';
 import poster2 from './posters/poster2.jpg';
 import poster3 from './posters/poster3.jpg';
@@ -123,7 +124,6 @@ const Products = ({cart, setCart}) => {
             setCart({...cart, 
                 [foundItem.id]: itemNum,
             })
-            
         }
     }
 
@@ -140,7 +140,7 @@ const Products = ({cart, setCart}) => {
                     handlerAdd={handlerAdd}
                 />
                 <div className="movieTitle">
-                    {foundItem.name}
+                    {foundItem.name} Poster
                 </div>
                 <div className="moviePrice">
                     {foundItem.price}
@@ -203,18 +203,37 @@ const RouteSwitch = () => {
 
     const [cart, setCart] = useState({});
 
+    function handlerCart() {
+        console.log("Should be resetting cart");
+        /* setCart(); */
+    }
+    function addToCart() {
+
+    }
+    function removeFromCart() {
+
+    }
+
     useEffect(() => {
         console.log(cart);
     }, [cart]);
 
     return (
       <BrowserRouter basename="/Shop-Till-You-Drop">
-        <Nav />
+        <Nav cart={cart} />
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/home" element={<Home />} />
           <Route path="/shop" element={<Shop />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/cart" element={<Cart 
+            cart={cart} 
+            setCart={setCart} 
+            items={items} 
+            handlerCart={handlerCart} 
+            addToCart={addToCart}
+            removeFromCart={removeFromCart}
+          />} />
           <Route path="/shop/:ID" element={<Products cart={cart} setCart={setCart} />} />
         </Routes>
       </BrowserRouter>

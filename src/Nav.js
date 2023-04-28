@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function Nav() {
+function Nav({cart}) {
+    const totalItemsNum = Object.values(cart).reduce((a, b) => a + b, 0);
   return (
     <nav>
         <h3>Movie Poster Madness</h3>
@@ -14,6 +15,9 @@ function Nav() {
             </Link>
             <Link to="/contact" >
                 <li>Contact</li>
+            </Link>
+            <Link to="/cart" >
+                <li>Cart ({totalItemsNum})</li>
             </Link>
         </ul>
     </nav> 
