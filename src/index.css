@@ -138,25 +138,36 @@ nav {
   font-family: 'Cinzel', serif;
   font-weight: bolder;
   font-size: 2em;
+  transition: font-size 0.75s;
 }
 
 .itemPrice {
   font-size: 1.1em;
   font-weight:lighter;
+  transition: font-size 0.75s;
 }
 
 .itemBox:hover {
   opacity: 1;
 }
 
-.itemBox:hover img.itemBoxImage {
-  box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.4);
-}
-/* add making the image LARGER with a slight transition (hover)*/
-
 img.itemBoxImage {
   width: 75%;
   border: 2px solid black;
+  transition: width 0.75s;
+}
+
+.itemBox:hover img.itemBoxImage {
+  box-shadow: 2px 2px 2px 2px rgb(0,0,0,0.4);
+  width: 85%;
+}
+
+.itemBox:hover .itemName {
+  font-size: 2.15em;
+}
+
+.itemBox:hover .itemPrice {
+  font-size: 1.2em;
 }
 
 .notImg {
@@ -172,7 +183,8 @@ img.itemBoxImage {
 }
 
 .movieTitle {
-  font-size: 2.25em;
+  font-size: 2em;
+  max-width: 65%;
 }
 
 .moviePrice {
@@ -196,7 +208,7 @@ img.itemBoxImage {
   padding: 0;
 }
 
-.homeCenter {
+.enterCenter {
   text-align: center;
   position: absolute;
   display: flex;
@@ -205,7 +217,7 @@ img.itemBoxImage {
   align-items: center;
   left:0;
   right:0;
-  top: 45%;
+  top: 50%;
   margin-left: auto; 
   margin-right: auto; 
   padding: 0 0.3em;
@@ -265,12 +277,19 @@ img.itemBoxImage {
   height: 100%;
 }
 
+.cartBackground {
+  height: 91vh;
+  padding: 1.4rem;
+  background-image: url('./goldflower.jpg');
+  background-repeat: no-repeat;
+}
+
 .filledCartText, .emptyCartText {
   font-size: 2.5em;
 }
 
 img.cartImage {
-  width: 50%;
+  width: 65%;
   border: 2px solid black;
 }
 
@@ -286,11 +305,12 @@ img.cartImage {
 
 .filledCart > div {
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 50% 50%;
+  margin: 5px 0px;
 }
 
 .filledCart > hr {
-  margin-top: 1.3rem;
+  margin-top: 0.75rem;
   border: 1px solid black;
   width: 95%;
   opacity: 0.75;
@@ -299,7 +319,7 @@ img.cartImage {
 .cartPic {
   display: flex;
   justify-content: center;
-  align-items: center;
+  min-width: 100%;
 }
 
 .cartName {
@@ -315,6 +335,46 @@ img.cartImage {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border: 1px solid black;
+  background-color: var(--second);
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
+
+.emptyCartIcon {
+  animation: cartColor 1s infinite;
+  animation-direction: alternate;
+}
+
+.tiltCart {
+  font-size: 3em;
+  animation: tilt 1s infinite;
+  animation-direction: alternate;
+}
+
+
+@keyframes cartColor {
+  from {color: black;}
+  to {color: red;}
+}
+
+@keyframes tilt {
+  0% {
+    transform: rotate(-30deg);   
+  }
+  100% {
+   transform: rotate(30deg);   
+  }
+}
+
+.backShopDiv {
+  font-size: 2.25em;
 }
 
 .cartNotImgInfo {
@@ -391,16 +451,6 @@ input[type='number']::-webkit-outer-spin-button {
   padding:0;
 }
 
-/* input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-input[type=number] {
-  -moz-appearance: textfield;
-}
- */
 @keyframes shimmyL {
   0% {
     transform: translate(0, 0);    
@@ -496,6 +546,9 @@ a:active {
     grid-template-columns: repeat(2, 47%);
     grid-template-rows: repeat(6, 20%);
   }
+  .movieTitle {
+    max-width: 80%;
+  }
 }
 
 @media screen and (min-width: 975px) {
@@ -509,6 +562,9 @@ a:active {
     height:85vh;
     margin: 0;
     margin-top: 3vh;
+  }
+  .movieTitle {
+    max-width: 90%;
   }
 }
 

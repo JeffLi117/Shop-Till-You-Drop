@@ -3,23 +3,31 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
 
-export default function InputNum({ID, count}) {
+export default function InputNum({ID, count, handlerThroughInput}) {
 
     const [itemID, setItemID] = useState();
     const [itemCount, setItemCount] = useState();
 
     function countUp() {
-        /* addToCart(); */
+        if (itemCount < 10) {
+            setItemCount(itemCount + 1)
+        };
     }
 
     function countDown() {
-        /* removeFromCart(); */
+        if (itemCount > 0) {
+            setItemCount(itemCount - 1)
+        };
     }
 
     useEffect(() => {
         setItemCount(count);
         setItemID(ID);
-    }, [count])
+    }, [])
+
+    useEffect(() => {
+        handlerThroughInput([itemID, itemCount]);
+    }, [itemCount])
 
   return (
     <div>

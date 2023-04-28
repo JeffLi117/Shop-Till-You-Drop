@@ -207,16 +207,25 @@ const RouteSwitch = () => {
         console.log("Should be resetting cart");
         /* setCart(); */
     }
-    function addToCart() {
-
-    }
-    function removeFromCart() {
-
-    }
-
-    useEffect(() => {
+    function handlerToInputNum(array) {
         console.log(cart);
-    }, [cart]);
+        console.log(array);
+        const specificID = array[0];
+        //find current itemID within the cart and check that the quantity is DIFFERENT compared to the # in array[1]
+        if (cart[specificID]) {
+            setCart(prevState => ({
+                ...prevState,
+                [specificID]: array[1]
+            }));
+            /* cart[specificID] = array[1]; */
+        }
+        /* console.log(`itemID is ${array[0]}, new item count is ${array[1]}`); */
+        /* setCart(); */
+    }
+
+    /* useEffect(() => {
+        console.log(cart);
+    }, [cart]); */
 
     return (
       <BrowserRouter basename="/Shop-Till-You-Drop">
@@ -231,8 +240,7 @@ const RouteSwitch = () => {
             setCart={setCart} 
             items={items} 
             handlerCart={handlerCart} 
-            addToCart={addToCart}
-            removeFromCart={removeFromCart}
+            handlerToInputNum={handlerToInputNum}
           />} />
           <Route path="/shop/:ID" element={<Products cart={cart} setCart={setCart} />} />
         </Routes>
