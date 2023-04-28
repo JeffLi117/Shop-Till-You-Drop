@@ -143,7 +143,7 @@ const Products = ({cart, setCart}) => {
                     {foundItem.name} Poster
                 </div>
                 <div className="moviePrice">
-                    {foundItem.price}
+                    ${foundItem.price}
                 </div>
                 <div className="movieDetails">
                     {foundItem.description}

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 export default function InputNum({ID, count, handlerThroughInput}) {
 
@@ -20,6 +21,10 @@ export default function InputNum({ID, count, handlerThroughInput}) {
         };
     }
 
+    function deleteItem() {
+        setItemCount(0);
+    }
+
     useEffect(() => {
         setItemCount(count);
         setItemID(ID);
@@ -30,14 +35,21 @@ export default function InputNum({ID, count, handlerThroughInput}) {
     }, [itemCount])
 
   return (
-    <div>
-        <button className="counterBtn" onClick={countDown} >
-            <FontAwesomeIcon icon={faMinus}/>
-        </button>
-        <input type="number" min="0" max="100" placeholder={itemCount} />
-        <button className="counterBtn" onClick={countUp} >
-            <FontAwesomeIcon icon={faPlus}/>
-        </button>
+    <div className="trashSep">
+        <div className="notTrash">
+            <button className="counterBtn" onClick={countDown} >
+                <FontAwesomeIcon icon={faMinus}/>
+            </button>
+            <input type="number" min="0" max="100" placeholder={itemCount} />
+            <button className="counterBtn" onClick={countUp} >
+                <FontAwesomeIcon icon={faPlus}/>
+            </button>
+        </div>
+        <div className="trashRow" >
+            <button className="counterBtn trash" onClick={deleteItem} >
+                <FontAwesomeIcon icon={faTrashCan} />
+            </button>
+        </div>
     </div>
   )
 }

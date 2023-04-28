@@ -60,7 +60,7 @@ function Cart({cart, items, handlerCart, handlerToInputNum}) {
                                 </div>
                                 <div className="cartNotImgInfo">
                                     <div className="cartName">
-                                        {items[(el[0]-1)].name} Poster
+                                        {items[(el[0]-1)].name}
                                     </div>
                                     <div className="cartPrice">
                                         ${items[(el[0]-1)].price}
@@ -77,8 +77,8 @@ function Cart({cart, items, handlerCart, handlerToInputNum}) {
                                 </div>
                             </div>
                         ))}
-                        <hr />
                     </div>
+                    <hr />
                     <div className="cartTotal">
                         Total: ${total}
                     </div>

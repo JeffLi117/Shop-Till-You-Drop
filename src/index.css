@@ -339,7 +339,7 @@ img.itemBoxImage {
 }
 
 img.cartImage {
-  width: 65%;
+  width: 75%;
   border: 2px solid black;
 }
 
@@ -348,18 +348,23 @@ img.cartImage {
 }
 
 .filledCart {
+  min-height: 50%;
+  height: fit-content;
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.85rem;
+  overflow-y:auto;
+  box-sizing: border-box;
 }
 
 .filledCart > div {
   display: grid;
-  grid-template-columns: 50% 50%;
-  margin: 5px 0px;
+  grid-template-columns: 44% 55%;
+  justify-content: center;
+  min-height: 100px;
 }
 
-.filledCart > hr {
+hr {
   margin-top: 0.75rem;
   border: 1px solid black;
   width: 95%;
@@ -376,10 +381,10 @@ img.cartImage {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  width: 60%;
 }
 
 .cartTextHolder {
+  height: 85vh;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -448,20 +453,38 @@ button.checkout:hover {
 }
 
 .cartNotImgInfo {
-  padding-top: 7.5px;
   font-size: 1.25em;
   display: grid;
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-rows: 25% 25% 50%;
   grid-template-columns: 50vw;
   justify-content: flex-start;
   align-items: center;
+  position: relative;
+}
+
+.cartNotImgInfo > div {
+  width: fit-content;
 }
 
 .cartNotImgInfo > .cartEachButtons button {
   max-height: 27px;
-  padding: 0;
+  padding: 2px;
   border: 2px solid var(--fourth);
 }
+
+.trashSep {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.trashRow {
+  display: flex;
+  justify-content: flex-start;
+}
+/* 
+.cartNotImgInfo > .cartEachButtons button.trash {
+} */
 
 .cartNotImgInfo > .cartEachButtons input {
   border: 0;
@@ -478,6 +501,7 @@ button.checkout:hover {
 }
 /* figure out how to make sure these +/- buttons 
 stay a CONSISTENT size, and look relatively square*/
+
 .cartTotal {
   font-size: 1.5em;
 }
