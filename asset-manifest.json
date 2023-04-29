@@ -1,13 +1,29 @@
 {
   "files": {
-    "main.css": "/Shop-Till-You-Drop/static/css/main.073c9b0a.css",
-    "main.js": "/Shop-Till-You-Drop/static/js/main.7720f5ad.js",
+    "main.css": "/Shop-Till-You-Drop/static/css/main.78375762.css",
+    "main.js": "/Shop-Till-You-Drop/static/js/main.7dc31da7.js",
+    "static/media/goldflower.jpg": "/Shop-Till-You-Drop/static/media/goldflower.e69ee8aa8db6c40e5aac.jpg",
+    "static/media/poster2.jpg": "/Shop-Till-You-Drop/static/media/poster2.b36700d059c346fbfc7e.jpg",
+    "static/media/poster10.jpg": "/Shop-Till-You-Drop/static/media/poster10.37ba0c5c27ec5034b035.jpg",
+    "static/media/film.jpg": "/Shop-Till-You-Drop/static/media/film.3a64e4f2b6a86f838d33.jpg",
+    "static/media/poster4.jpg": "/Shop-Till-You-Drop/static/media/poster4.0cef24795b5aed3ac30f.jpg",
+    "static/media/poster9.jpg": "/Shop-Till-You-Drop/static/media/poster9.9f6661e738648d47b71c.jpg",
+    "static/media/poster5.jpg": "/Shop-Till-You-Drop/static/media/poster5.b1a40502b7eed060adf7.jpg",
+    "static/media/poster3.jpg": "/Shop-Till-You-Drop/static/media/poster3.15a1df954fd040d0e4a7.jpg",
+    "static/media/poster1.jpg": "/Shop-Till-You-Drop/static/media/poster1.259007eb52bfcc3276a4.jpg",
+    "static/media/poster8.jpg": "/Shop-Till-You-Drop/static/media/poster8.917aa005c94f94383cbe.jpg",
+    "static/media/poster6.jpg": "/Shop-Till-You-Drop/static/media/poster6.0e05c927cbab3eda9512.jpg",
+    "static/media/poster7.jpg": "/Shop-Till-You-Drop/static/media/poster7.946f7140b70f5965ad58.jpg",
+    "static/media/github-original.svg": "/Shop-Till-You-Drop/static/media/github-original.31ddba7e7034f756ea8fe509bfc57a4b.svg",
     "index.html": "/Shop-Till-You-Drop/index.html",
-    "main.073c9b0a.css.map": "/Shop-Till-You-Drop/static/css/main.073c9b0a.css.map",
-    "main.7720f5ad.js.map": "/Shop-Till-You-Drop/static/js/main.7720f5ad.js.map"
+    "static/media/envelope.svg": "/Shop-Till-You-Drop/static/media/envelope.a8545802cc61d24d2f003f271ad5ca6f.svg",
+    "static/media/linkedin-original.svg": "/Shop-Till-You-Drop/static/media/linkedin-original.094fc178cb716f72c99a8889db99b044.svg",
+    "static/media/youtube.svg": "/Shop-Till-You-Drop/static/media/youtube.5f859b047b7d1abdc18158280e417091.svg",
+    "main.78375762.css.map": "/Shop-Till-You-Drop/static/css/main.78375762.css.map",
+    "main.7dc31da7.js.map": "/Shop-Till-You-Drop/static/js/main.7dc31da7.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.7720f5ad.js"
+    "static/css/main.78375762.css",
+    "static/js/main.7dc31da7.js"
   ]
 }
