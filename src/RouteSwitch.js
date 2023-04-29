@@ -228,7 +228,7 @@ const RouteSwitch = () => {
     }, [cart]); */
 
     return (
-      <HashRouter basename="/Shop-Till-You-Drop">
+      <HashRouter basename="/">
         <Nav cart={cart} />
         <Routes>
           <Route path="/" element={<App />} />

@@ -1,7 +1,7 @@
 {
   "name": "shop-till-you-drop",
   "version": "0.1.0",
-  "homepage": "https://JeffLi117.github.io",
+  "homepage": "https://JeffLi117.github.io/Shop-Till-You-Drop",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
