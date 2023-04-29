@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { 
+    HashRouter,
     BrowserRouter,
     generatePath,
     Routes,
@@ -227,7 +228,7 @@ const RouteSwitch = () => {
     }, [cart]); */
 
     return (
-      <BrowserRouter basename="/Shop-Till-You-Drop">
+      <HashRouter basename="/Shop-Till-You-Drop">
         <Nav cart={cart} />
         <Routes>
           <Route path="/" element={<App />} />
@@ -243,7 +244,7 @@ const RouteSwitch = () => {
           />} />
           <Route path="/shop/:ID" element={<Products cart={cart} setCart={setCart} />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     );
   };
   
