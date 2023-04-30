@@ -27,7 +27,7 @@ function Cart({cart, items, handlerCart, handlerToInputNum}) {
         sumAll();
     }, [cart])
 
-    if (Object.values(cart).length === 0) {
+    if (Object.values(cart).length === 0 || (Object.values(cart).reduce((a,b) => a + b, 0)) === 0) {
         return (
             <div className="cartBackground" >
                 <div className="cartTextHolder empty">

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { 
     HashRouter,
-    BrowserRouter,
     generatePath,
     Routes,
     Route,
@@ -15,6 +14,8 @@ import Nav from "./Nav";
 import Home from "./Home";
 import AddToBag from './AddToBag';
 import Cart from "./Cart";
+import BackToShop from "./BackToShop";
+import ItemAddedOverlay from "./ItemAddedOverlay";
 import poster1 from './posters/poster1.jpg';
 import poster2 from './posters/poster2.jpg';
 import poster3 from './posters/poster3.jpg';
@@ -99,7 +100,7 @@ const items = [
     },        
 ];
 
-const Products = ({cart, setCart}) => {
+const Products = ({cart, setCart, handlerSubmit, grayed}) => {
     const { ID } = useParams();
     const foundItem = items[(ID-1)];
 
@@ -126,32 +127,74 @@ const Products = ({cart, setCart}) => {
                 [foundItem.id]: itemNum,
             })
         }
+        handlerSubmit();
     }
 
-    return (
-        <div className="ItemDetail" >
-            <div className="imageHolder">
-                <img src={foundItem.image} alt="movie poster" className="movieImage" />
+    if (grayed) {
+        return (
+            <div>
+                <ItemAddedOverlay foundItem={foundItem} />
+                <div className="ItemDetail grayed" onClick={handlerSubmit} >
+                    <div className="backBtn">
+                        <Link to="/shop">
+                            <BackToShop />
+                        </Link>
+                    </div>
+                    <div className="imageHolder">
+                        <img src={foundItem.image} alt="movie poster" className="movieImage" />
+                    </div>
+                    <div className="notImg">
+                        <AddToBag 
+                            itemNum = {itemNum}
+                            handlerUp = {handlerUp}
+                            handlerDown = {handlerDown}
+                            handlerAdd={handlerAdd}
+                        />
+                        <div className="movieTitle">
+                            {foundItem.name} Poster
+                        </div>
+                        <div className="moviePrice">
+                            ${foundItem.price}
+                        </div>
+                        <div className="movieDetails">
+                            {foundItem.description}
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div className="notImg">
-                <AddToBag 
-                    itemNum = {itemNum}
-                    handlerUp = {handlerUp}
-                    handlerDown = {handlerDown}
-                    handlerAdd={handlerAdd}
-                />
-                <div className="movieTitle">
-                    {foundItem.name} Poster
+        )
+    } else {
+        return (
+            <div className="ItemDetail" >
+                <div className="backBtn">
+                    <Link to="/shop">
+                        <BackToShop />
+                    </Link>
                 </div>
-                <div className="moviePrice">
-                    ${foundItem.price}
+                <div className="imageHolder">
+                    <img src={foundItem.image} alt="movie poster" className="movieImage" />
                 </div>
-                <div className="movieDetails">
-                    {foundItem.description}
+                <div className="notImg">
+                    <AddToBag 
+                        itemNum = {itemNum}
+                        handlerUp = {handlerUp}
+                        handlerDown = {handlerDown}
+                        handlerAdd={handlerAdd}
+                    />
+                    <div className="movieTitle">
+                        {foundItem.name} Poster
+                    </div>
+                    <div className="moviePrice">
+                        ${foundItem.price}
+                    </div>
+                    <div className="movieDetails">
+                        {foundItem.description}
+                    </div>
                 </div>
             </div>
-        </div>
-    )
+        )
+    }
+    
   };
 
 const Shop = (/* {cart, setCart} */) => {
@@ -205,6 +248,11 @@ const Shop = (/* {cart, setCart} */) => {
 const RouteSwitch = () => {
 
     const [cart, setCart] = useState({});
+    const [submitted, setSubmitted] = useState(false);
+
+    function handlerSubmit() {
+        setSubmitted(!submitted);
+    }
 
     function handlerCart() {
         console.log("Should be resetting cart");
@@ -227,25 +275,58 @@ const RouteSwitch = () => {
         console.log(cart);
     }, [cart]); */
 
-    return (
-      <HashRouter basename="/">
-        <Nav cart={cart} />
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/cart" element={<Cart 
-            cart={cart} 
-            setCart={setCart} 
-            items={items} 
-            handlerCart={handlerCart} 
-            handlerToInputNum={handlerToInputNum}
-          />} />
-          <Route path="/shop/:ID" element={<Products cart={cart} setCart={setCart} />} />
-        </Routes>
-      </HashRouter>
-    );
+    if (submitted) {
+        return (
+            <HashRouter basename="/">
+              <Nav cart={cart} grayed="grayed" 
+                handlerSubmit={handlerSubmit} 
+              />
+              <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/cart" element={<Cart 
+                  cart={cart} 
+                  setCart={setCart} 
+                  items={items} 
+                  handlerCart={handlerCart} 
+                  handlerToInputNum={handlerToInputNum}
+                />} />
+                <Route path="/shop/:ID" element={<Products 
+                  cart={cart} 
+                  setCart={setCart} 
+                  handlerSubmit={handlerSubmit}
+                  grayed="grayed"
+                />} />
+              </Routes>
+            </HashRouter>
+          );
+    } else {
+        return (
+            <HashRouter basename="/">
+              <Nav cart={cart} />
+              <Routes>
+                <Route path="/" element={<App />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/shop" element={<Shop />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/cart" element={<Cart 
+                  cart={cart} 
+                  setCart={setCart} 
+                  items={items} 
+                  handlerCart={handlerCart} 
+                  handlerToInputNum={handlerToInputNum}
+                />} />
+                <Route path="/shop/:ID" element={<Products 
+                  cart={cart} 
+                  setCart={setCart} 
+                  handlerSubmit={handlerSubmit}
+                />} />
+              </Routes>
+            </HashRouter>
+          );
+    }
   };
   
 export default RouteSwitch;
