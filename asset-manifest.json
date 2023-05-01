@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Shop-Till-You-Drop/static/css/main.0198f817.css",
-    "main.js": "/Shop-Till-You-Drop/static/js/main.6c5e83a6.js",
+    "main.css": "/Shop-Till-You-Drop/static/css/main.16337d0d.css",
+    "main.js": "/Shop-Till-You-Drop/static/js/main.1f40339b.js",
     "static/media/goldflower.jpg": "/Shop-Till-You-Drop/static/media/goldflower.e69ee8aa8db6c40e5aac.jpg",
     "static/media/poster2.jpg": "/Shop-Till-You-Drop/static/media/poster2.b36700d059c346fbfc7e.jpg",
     "static/media/poster10.jpg": "/Shop-Till-You-Drop/static/media/poster10.37ba0c5c27ec5034b035.jpg",
@@ -19,11 +19,11 @@
     "static/media/envelope.svg": "/Shop-Till-You-Drop/static/media/envelope.a8545802cc61d24d2f003f271ad5ca6f.svg",
     "static/media/linkedin-original.svg": "/Shop-Till-You-Drop/static/media/linkedin-original.094fc178cb716f72c99a8889db99b044.svg",
     "static/media/youtube.svg": "/Shop-Till-You-Drop/static/media/youtube.5f859b047b7d1abdc18158280e417091.svg",
-    "main.0198f817.css.map": "/Shop-Till-You-Drop/static/css/main.0198f817.css.map",
-    "main.6c5e83a6.js.map": "/Shop-Till-You-Drop/static/js/main.6c5e83a6.js.map"
+    "main.16337d0d.css.map": "/Shop-Till-You-Drop/static/css/main.16337d0d.css.map",
+    "main.1f40339b.js.map": "/Shop-Till-You-Drop/static/js/main.1f40339b.js.map"
   },
   "entrypoints": [
-    "static/css/main.0198f817.css",
-    "static/js/main.6c5e83a6.js"
+    "static/css/main.16337d0d.css",
+    "static/js/main.1f40339b.js"
   ]
 }
