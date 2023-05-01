@@ -112,14 +112,12 @@ nav {
 }
 
 .welcomeTextHolder {
-  margin: 1em;
-  margin-bottom: 0.5em;
   box-sizing: border-box;
   text-align: center;
   display: flex;
   flex-direction: column;
-  gap: 1vh;
-  justify-content: space-between;
+  gap: 1.25vh;
+  justify-content: space-evenly;
   align-items: center;
   border: 1px solid black;
   padding: 1rem;
@@ -129,10 +127,10 @@ nav {
 }
 
 .welcomeTextHolder > h1 {
-  font-size: 2.15em;
-  font-family: 'Cinzel', serif;
-  font-weight: bolder;
-  margin: 1.5vh;
+  font-size: 3em;
+  /* font-family: 'Cinzel', serif; 
+  font-weight: bolder;*/
+  margin: 1vh;
 }
 
 .welcomeTextHolder > div {
@@ -148,8 +146,6 @@ nav {
 }
 
 .shopList {
-  margin: 1em;
-  margin-bottom: 0.5em;
   box-sizing: border-box;
   text-align: center;
   display: flex;
@@ -174,16 +170,16 @@ nav {
 }
 
 .itemName {
-  font-family: 'Cinzel', serif;
-  font-weight: bolder;
+  /* font-family: 'Cinzel', serif; 
+  font-weight: bolder;*/
   font-size: 2em;
-  transition: font-size 0.75s;
+  transition: font-size 0.75s, color 0.75s;
 }
 
 .itemPrice {
   font-size: 1.1em;
   font-weight:lighter;
-  transition: font-size 0.75s;
+  transition: font-size 0.75s, color 0.75s;
 }
 
 .itemBox:hover {
@@ -203,10 +199,12 @@ img.itemBoxImage {
 
 .itemBox:hover .itemName {
   font-size: 2.15em;
+  color: black;
 }
 
 .itemBox:hover .itemPrice {
   font-size: 1.2em;
+  color: black;
 }
 
 .backBtnHolder {
@@ -282,14 +280,15 @@ img.itemBoxImage {
   margin-left: auto; 
   margin-right: auto; 
   border: 2px solid black;
-  font-size: 1.35em;
+  font-size: 1.55em;
   z-index: 12;
 }
 
 .overlayKeepShop, .overlayCheckout {
-  font-size: 1.15;
-  font-weight: bold;
-  font-family: 'Cinzel', serif;
+  font-size: 1.25rem;
+  /*font-weight: bold;
+   font-family: 'Cinzel', serif; */
+   font-family: 'Bebas Neue', cursive;
   background-color: var(--third);
   color: var(--fourth);
   border: 2px solid var(--fourth);
@@ -385,22 +384,13 @@ img.itemBoxImage {
   background-repeat:repeat-y;
 }
 
-.cartBackgroundShop {
-  height: 91vh;
-  padding: 1.25rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-image: url('./goldflower.jpg');
-  background-repeat:repeat-y;
-}
-
 .filledCartText, .emptyCartText {
   font-size: 2.5em;
 }
 
 img.cartImage {
   width: 75%;
+  max-width: 180px;
   border: 2px solid black;
 }
 
@@ -442,6 +432,11 @@ hr {
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  font-size: 1.25em;
+}
+
+.cartPrice {
+  font-size: 1.1em;  
 }
 
 .cartTextHolder {
@@ -457,8 +452,9 @@ hr {
 
 button.checkout {
   margin: 1rem;
-  font-family: 'Cinzel', serif;
-  font-weight: bold;
+  /* font-family: 'Cinzel', serif; 
+  font-weight: bold;*/
+  font-family: 'Bebas Neue', cursive;
   color: var(--fourth);
   font-size: 1.3em;
   border: 2px solid var(--fourth);
@@ -664,10 +660,11 @@ a:active {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 5%;
+  gap: 4%;
   border: 1px solid black;
   background-color: var(--second);
   padding: 1vh;
+  height: 100%;
   text-align: center;
 }
 
@@ -680,6 +677,7 @@ a:active {
   background-color: var(--third);
   padding: 1rem;
   margin: 1.5vh;
+  transition: background-color 0.75s, border-radius 0.75s;
 }
 
 .contactInfo  div:last-child {
@@ -689,6 +687,11 @@ a:active {
 
 .contactInfo > a:hover img {
   animation: spin 1s 1;
+}
+
+.contactInfo > a:hover {
+  background-color: var(--fourth);
+  border-radius: 12px;
 }
 
 img.contactIcon {
@@ -726,6 +729,12 @@ img.contactIcon {
 
 */
 
+@media screen and (min-width: 350px) {
+  .filledCart > div {
+    grid-template-columns: 58% 40%;
+  }
+}
+
 @media screen and (min-width: 450px) {
   body {
     font-size: 15px;
@@ -752,11 +761,56 @@ img.contactIcon {
     justify-content: center;
     row-gap: 1.5vh;
     height:85vh;
-    margin: 0;
-    margin-top: 3vh;
   }
   .movieTitle {
     max-width: 80%;
+  }
+  .welcomeTextHolder {
+    justify-content: space-evenly;
+    padding: 2rem;
+  }
+  .welcomeTextHolder > h1 {
+    max-width: 325px;
+  }
+  .welcomeTextHolder > div {
+    max-width: 325px;
+  }
+  .contactInfo {
+    gap: 0.7rem;
+    justify-content: center;
+  }
+  img.contactIcon {
+    width: 48px;
+  }
+  .contactInfo > a {
+    margin: 2vh;
+  }
+}
+
+@media screen and (min-width: 575px) {
+  .cartBackground {
+    padding-left: 9vw;
+    padding-right: 9vw;
+  }
+  .cartName {
+    font-size: 1.5em;
+  }
+  .cartPrice {
+    font-size: 1.35em;
+  }
+  img.cartImage {
+    max-width: 180px;
+  }
+  .filledCart > div {
+    grid-template-columns: 60% 40%;
+  }
+  .cartNotImgInfo > .cartEachButtons button {
+    min-height: 35px;
+    width: 32px;
+    font-size: 1.1em;
+  }
+  .notTrash > input {
+    font-size: 1.1em;
   }
 }
 
@@ -769,15 +823,28 @@ img.contactIcon {
     grid-template-rows: repeat(2, 45%);
     row-gap: 2vh;
     height:85vh;
-    margin: 0;
-    margin-top: 3vh;
   }
   .movieTitle {
     max-width: 90%;
   }
+  .trashSep {
+    gap: 8px;
+  }
+  .cartNotImgInfo > .cartEachButtons button {
+    min-height: 47px;
+    width: 40px;
+  }
+  .aboveEnter {
+    max-width: 700px;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }
 
 @media screen and (min-width: 1200px) {
+  body {
+    font-size: 19px;
+  }
   .shopList {
     grid-template-rows: repeat(2, calc(45% + 4vw));
     row-gap: calc(3vh + 1vw);

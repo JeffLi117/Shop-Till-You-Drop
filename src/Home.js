@@ -2,7 +2,7 @@ import React from 'react'
 
 function Home() {
   return (
-    <div className="cartBackgroundShop">
+    <div className="cartBackground">
       <div className="welcomeTextHolder">
         <h1 className="welcome">Welcome to Movie Poster Madness</h1>
         <div>Here, you can find a unique collection of movie posters not seen anywhere else. I daresay you may have never heard of these movies... </div>

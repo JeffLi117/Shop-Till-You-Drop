@@ -7,7 +7,9 @@ function Nav({cart, grayed, handlerSubmit}) {
     if (grayed) {
         return (
             <nav className="grayed" onClick={handlerSubmit} >
-                <h3>Movie Poster Madness</h3>
+                <Link to="/" >
+                    <h3>Movie Poster Madness</h3>
+                </Link>
                 <ul className="nav-links">
                     <Link to="/home" >
                         <li>Home</li>
@@ -27,7 +29,9 @@ function Nav({cart, grayed, handlerSubmit}) {
     } else {
         return (
             <nav>
-                <h3>Movie Poster Madness</h3>
+                <Link to="/" >
+                    <h3>Movie Poster Madness</h3>
+                </Link>
                 <ul className="nav-links">
                     <Link to="/home" >
                         <li>Home</li>

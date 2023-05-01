@@ -133,7 +133,7 @@ const Products = ({cart, setCart, handlerSubmit, grayed}) => {
     if (grayed) {
         return (
             <div>
-                <ItemAddedOverlay foundItem={foundItem} />
+                <ItemAddedOverlay foundItem={foundItem} handlerSubmit={handlerSubmit} />
                 <div className="ItemDetail grayed" onClick={handlerSubmit} >
                     <div className="backBtn">
                         <Link to="/shop">
@@ -215,7 +215,7 @@ const Shop = (/* {cart, setCart} */) => {
     } */
   
     return (
-        <div className="cartBackgroundShop" >
+        <div className="cartBackground" >
             <div className="shopList">
                 {items.map((item) => (
                     <h1 key={item.id}>
