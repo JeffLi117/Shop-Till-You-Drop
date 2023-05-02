@@ -118,7 +118,7 @@ nav {
   flex-direction: column;
   gap: 1.25vh;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-end;
   border: 1px solid black;
   padding: 1rem;
   background-color: var(--second);
@@ -209,7 +209,7 @@ img.itemBoxImage {
 
 .backBtnHolder {
   position: absolute;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   top: 7px;
   left: 7px;
   color: var(--fourth);
@@ -385,7 +385,7 @@ img.itemBoxImage {
 }
 
 .filledCartText, .emptyCartText {
-  font-size: 2.5em;
+  font-size: 3em;
 }
 
 img.cartImage {
@@ -401,8 +401,6 @@ img.cartImage {
 .filledCart {
   min-height: 50%;
   height: fit-content;
-  display: flex;
-  flex-direction: column;
   gap: 0.85rem;
   overflow-y:auto;
   box-sizing: border-box;
@@ -412,7 +410,7 @@ img.cartImage {
   display: grid;
   grid-template-columns: 44% 55%;
   justify-content: center;
-  min-height: 100px;
+  min-height: 120px;
 }
 
 hr {
@@ -425,18 +423,25 @@ hr {
 .cartPic {
   display: flex;
   justify-content: center;
-  min-width: 100%;
+  max-height: 95%;
 }
 
 .cartName {
+  padding-top: 5px;
+  max-width: 93%;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
   align-items: center;
   font-size: 1.25em;
 }
 
 .cartPrice {
   font-size: 1.1em;  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .cartTextHolder {
@@ -511,11 +516,11 @@ button.checkout:hover {
 
 .cartNotImgInfo {
   font-size: 1.25em;
-  display: grid;
-  grid-template-rows: 25% 25% 50%;
-  grid-template-columns: 50vw;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5%;
   justify-content: flex-start;
-  align-items: center;
   position: relative;
 }
 
@@ -560,7 +565,7 @@ button.checkout:hover {
 stay a CONSISTENT size, and look relatively square*/
 
 .cartTotal {
-  font-size: 1.5em;
+  font-size: 2.25em;
 }
 input[type="number"] {
   height: 100%;
@@ -634,6 +639,7 @@ input[type='number']::-webkit-outer-spin-button {
 img.movieImage {
   width: 100%;
   border: 2px solid black;
+  max-width: 450px;
 }
 
 img.homeImg {
@@ -670,7 +676,7 @@ a:active {
 
 .contactInfo  div:first-child {
   margin-top: 5%;
-  font-size: 2em;
+  font-size: 3em;
 }
 
 .contactInfo > a {
@@ -724,11 +730,6 @@ img.contactIcon {
   background: black;
 }
 
-/* when screen gets bigger, change: 
-  img.movieImage
-
-*/
-
 @media screen and (min-width: 350px) {
   .filledCart > div {
     grid-template-columns: 58% 40%;
@@ -765,6 +766,9 @@ img.contactIcon {
   .movieTitle {
     max-width: 80%;
   }
+  .ItemDetail {
+    margin: 0 auto;
+  }
   .welcomeTextHolder {
     justify-content: space-evenly;
     padding: 2rem;
@@ -796,7 +800,7 @@ img.contactIcon {
     font-size: 1.5em;
   }
   .cartPrice {
-    font-size: 1.35em;
+    font-size: 1.25em;
   }
   img.cartImage {
     max-width: 180px;
@@ -811,6 +815,50 @@ img.contactIcon {
   }
   .notTrash > input {
     font-size: 1.1em;
+  }
+  .backBtnHolder {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .ItemDetail {
+    display: grid;
+    grid-template-columns: 55% 45%;
+  }
+  .imageHolder {
+    grid-column: 1 / 2;
+  }
+  .notImg {
+    grid-column: 2 / 3;
+    width: 90%;
+  }
+  .movieTitle {
+    width: 75%;
+  }
+  .contactInfo {
+    display: grid;
+    grid-template-rows: 15% 35% 35% 15%;
+    justify-content: center;
+    align-items: center;
+  }
+  .contactInfo div:first-of-type {
+    grid-row: 1 / 2;
+    grid-column: 1 / 3;
+  }
+  .contactInfo div:last-of-type {
+    grid-row: 4 / 5;
+    grid-column: 1 / 3;
+  }
+  .contactInfo > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(145px + 4vw);
+    height: calc(145px + 4vw);
+  }
+  img.contactIcon {
+    width: calc(65px + 3vw);
   }
 }
 
@@ -827,17 +875,25 @@ img.contactIcon {
   .movieTitle {
     max-width: 90%;
   }
-  .trashSep {
-    gap: 8px;
+  .welcomeTextHolder {
+    text-align: right;
+    background-image: url('./filmbackground.jpg');
+    /* background-size: cover; */
+    background-position-x: -350px;
   }
-  .cartNotImgInfo > .cartEachButtons button {
-    min-height: 47px;
-    width: 40px;
+  .welcomeTextHolder > h1 {
+    max-width: 65%;
+  }
+  .welcomeTextHolder > div {
+    max-width: calc(40% + 4vw);
   }
   .aboveEnter {
     max-width: 700px;
     margin-left: 0;
     margin-right: 0;
+  }
+  .backBtnHolder {
+    font-size: 2.5rem;
   }
 }
 
@@ -848,5 +904,27 @@ img.contactIcon {
   .shopList {
     grid-template-rows: repeat(2, calc(45% + 4vw));
     row-gap: calc(3vh + 1vw);
+  }
+  .movieTitle {
+    width: 100%;
+  }
+  .contactInfo {
+    display: grid;
+    grid-template-rows: 20% 60% 20%;
+    justify-content: center;
+    align-items: center;
+  }
+  .contactInfo div:first-of-type {
+    grid-row: 1 / 2;
+    grid-column: 1 / 5;
+  }
+  .contactInfo div:last-of-type {
+    grid-row: 3 / 4;
+    grid-column: 1 / 5;
+  }
+  .contactInfo > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

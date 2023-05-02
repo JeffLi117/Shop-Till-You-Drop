@@ -112,7 +112,7 @@ const Products = ({cart, setCart, handlerSubmit, grayed}) => {
         }
     }
     function handlerDown() {
-        if (itemNum > 0) {
+        if (itemNum > 1) {
             setItemNum(itemNum - 1)  
         }  
     }
@@ -249,9 +249,15 @@ const RouteSwitch = () => {
 
     const [cart, setCart] = useState({});
     const [submitted, setSubmitted] = useState(false);
+    const [checkoutClick, setCheckout] = useState(false);
 
     function handlerSubmit() {
         setSubmitted(!submitted);
+    }
+
+    function handlerCheckout() {
+        console.log("Checkout handler here!")
+        setCheckout(!checkoutClick);
     }
 
     function handlerCart() {
@@ -292,6 +298,7 @@ const RouteSwitch = () => {
                   items={items} 
                   handlerCart={handlerCart} 
                   handlerToInputNum={handlerToInputNum}
+                  handlerCheckout={handlerCheckout}
                 />} />
                 <Route path="/shop/:ID" element={<Products 
                   cart={cart} 
@@ -317,6 +324,7 @@ const RouteSwitch = () => {
                   items={items} 
                   handlerCart={handlerCart} 
                   handlerToInputNum={handlerToInputNum}
+                  handlerCheckout={handlerCheckout}
                 />} />
                 <Route path="/shop/:ID" element={<Products 
                   cart={cart} 

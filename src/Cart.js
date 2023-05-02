@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
 
-function Cart({cart, items, handlerCart, handlerToInputNum}) {
+function Cart({cart, items, handlerCart, handlerToInputNum, handlerCheckout}) {
 
     const cartArr = Object.entries(cart);
     const [total, setTotal] = useState(0);
@@ -21,6 +21,10 @@ function Cart({cart, items, handlerCart, handlerToInputNum}) {
             midArr.push((items[(Number(cartArr[i][0])-1)].price)*cartArr[i][1])
         }
         setTotal((Math.round((midArr.reduce((a,b) => a + b, 0)) * 100) / 100).toFixed(2));
+    }
+    function checkoutAlert() {
+        /* add birthday grunt overlay and noise? */
+        handlerCheckout();
     }
 
     useEffect(() => {
@@ -82,7 +86,7 @@ function Cart({cart, items, handlerCart, handlerToInputNum}) {
                     <div className="cartTotal">
                         Total: ${total}
                     </div>
-                    <button className="checkout">
+                    <button className="checkout" onClick={checkoutAlert} >
                         Checkout
                     </button>
                 </div>
