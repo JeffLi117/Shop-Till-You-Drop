@@ -666,7 +666,7 @@ a:active {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 2%;
+  gap: 4%;
   border: 1px solid black;
   background-color: var(--second);
   padding: 1vh;
