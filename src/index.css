@@ -118,7 +118,7 @@ nav {
   flex-direction: column;
   gap: 1.25vh;
   justify-content: space-evenly;
-  align-items: flex-end;
+  align-items: center;
   border: 1px solid black;
   padding: 1rem;
   background-color: var(--second);
@@ -842,6 +842,12 @@ img.contactIcon {
   }
   .movieTitle {
     width: 75%;
+  }
+  .welcomeTextHolder {
+    text-align: right;
+    background-image: url('./filmbackground.jpg');
+    background-position-x: -450px;
+    align-items: flex-end;
   }
   .contactInfo {
     display: grid;

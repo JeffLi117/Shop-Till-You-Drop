@@ -257,7 +257,7 @@ const RouteSwitch = () => {
 
     function handlerCheckout() {
         console.log("Checkout handler here!")
-        setCheckout(!checkoutClick);
+        alert("Thanks for fiddling around with my website! Unfortunately, these movie posters weren't actually real/for sale. I hope you'll forgive me for deceiving you 🙃. Please head to my contact page and check out my socials!")
     }
 
     function handlerCart() {
