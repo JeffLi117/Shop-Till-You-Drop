@@ -736,6 +736,13 @@ img.contactIcon {
   }
 }
 
+@media screen and (max-height: 600px) {
+  .contactInfo > a {
+    padding: 0.75rem;
+    margin: 0;
+  }
+}
+
 @media screen and (min-width: 450px) {
   body {
     font-size: 15px;
