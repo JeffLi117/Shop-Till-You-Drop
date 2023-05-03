@@ -736,7 +736,7 @@ img.contactIcon {
   }
 }
 
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 745px) {
   .contactInfo > a {
     padding: 0.75rem;
     margin: 0;
