@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Shop-Till-You-Drop/static/css/main.af2840e8.css",
+    "main.css": "/Shop-Till-You-Drop/static/css/main.15f52d36.css",
     "main.js": "/Shop-Till-You-Drop/static/js/main.e5cdec51.js",
     "static/media/filmbackground.jpg": "/Shop-Till-You-Drop/static/media/filmbackground.61f7d4c7067d606abd5d.jpg",
     "static/media/goldflower.jpg": "/Shop-Till-You-Drop/static/media/goldflower.e69ee8aa8db6c40e5aac.jpg",
@@ -20,11 +20,11 @@
     "static/media/envelope.svg": "/Shop-Till-You-Drop/static/media/envelope.a8545802cc61d24d2f003f271ad5ca6f.svg",
     "static/media/linkedin-original.svg": "/Shop-Till-You-Drop/static/media/linkedin-original.094fc178cb716f72c99a8889db99b044.svg",
     "static/media/youtube.svg": "/Shop-Till-You-Drop/static/media/youtube.5f859b047b7d1abdc18158280e417091.svg",
-    "main.af2840e8.css.map": "/Shop-Till-You-Drop/static/css/main.af2840e8.css.map",
+    "main.15f52d36.css.map": "/Shop-Till-You-Drop/static/css/main.15f52d36.css.map",
     "main.e5cdec51.js.map": "/Shop-Till-You-Drop/static/js/main.e5cdec51.js.map"
   },
   "entrypoints": [
-    "static/css/main.af2840e8.css",
+    "static/css/main.15f52d36.css",
     "static/js/main.e5cdec51.js"
   ]
 }
